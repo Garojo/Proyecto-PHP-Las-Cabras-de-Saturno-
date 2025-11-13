@@ -278,7 +278,7 @@ mostrarMapa($mapaDanos);
 echo"<br>";
 
 $costeTotal = calcularCosteLimpieza($mapaDanos);
-echo "� Coste total de limpieza: " . number_format($costeTotal, 0, ',', '.') . " €<br>";
+echo "� Coste total de limpieza: " . $costeTotal . " €<br>";
 
 $totalAtmosfera = totalAtmosfera($capraMajoris);
 $atmosferaAfectada = atmosferaAfectada($mapaDanos);
@@ -288,8 +288,8 @@ if ($totalAtmosfera > 0) {
     $pecesPorKm2 = $toneladasPeces / $totalAtmosfera;
     $pecesAfectados = $atmosferaAfectada * $pecesPorKm2;
     $recaudacion = $pecesAfectados * 1000 * 7;
-    echo "� Recaudación ONG: " . number_format($recaudacion, 0, ',', '.') . " €<br>";
+    echo "� Recaudación ONG: " . $recaudacion. " €<br>";
     $diferencia = $costeTotal - $recaudacion;
-    echo "� Daños netos estimados: " . number_format($diferencia, 0, ',', '.') . " €<br>";
+    echo "� Daños netos estimados: " . $diferencia. " €<br>";
 }
 ?>
